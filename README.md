@@ -22,7 +22,9 @@ Navigate to the Oracle directory.
 ```sh
 $ cd oracle-assistant
 ```
-**Rename the `placeholder` folder with your telegram id.**<br>
+
+**Rename the `placeholder` folder with your telegram id.**
+
 Run the Main commands with your Telegram Bot Token and OpenAI API Key.
 ```sh
 $ ./main {openai-key} {telegram-bot-token}
