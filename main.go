@@ -38,6 +38,9 @@ type TMessage struct {
 
 type Chat struct {
 	Id int `json:"id"`
+    Username *string `json:"username,omitempty"`
+    Firstname *string `json:"first_name,omitempty"`
+    Lastname *string `json:"last_name,omitempty"`
 }
 
 //********//
@@ -130,6 +133,16 @@ func processUpdate(update Update) {
     openAIResponse, err := queryOpenAI(input, update.Message.Chat.Id)
     if err != nil {
         fmt.Println("Error querying OpenAI:", err)
+        fmt.Println("Following user tried to access Oracle.")
+        if update.Message.Chat.Username != nil {
+            fmt.Println("Username: ", *update.Message.Chat.Username)
+        }
+        if update.Message.Chat.Firstname != nil {
+            fmt.Println("First Name: ", *update.Message.Chat.Firstname)
+        }
+        if update.Message.Chat.Lastname != nil {
+            fmt.Println("Last Name: ", *update.Message.Chat.Lastname)
+        }
         return
     }
 
