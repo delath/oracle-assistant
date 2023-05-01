@@ -1,11 +1,10 @@
 # Oracle - Telegram Bot
 [![License: MIT][license-image]][license]
 ![latest commit](https://img.shields.io/github/last-commit/Delath/Oracle-Assistant?color=red)
-![latest release](https://img.shields.io/github/v/release/Delath/Oracle-Assistant?color=green)
 
 <img src="https://i.imgur.com/MOALWmX.png" width=192px height=192px align="right" />
 
-Oracle is a Telegram Bot built in Golang that utilizes OpenAI APIs. The bot has persistent memory, allowing it to remember previous conversations and enhance user experience.
+Oracle is a Telegram Bot built in Golang that utilizes OpenAI APIs. She has persistent memory, allowing her to remember previous conversations and enhance user experience.
 
 ## Features
 - Intuitive chat interface with Telegram.
@@ -31,14 +30,14 @@ $ ./main {openai-key} {telegram-bot-token}
 ```
 
 ## Usage
-Oracle is a telegram bot that listens on different events and messages from users. When a new user sends a message, it tries to access their chat history in the `Mems/` directory. If it doesn't find any, it ignores him. it appends the message to the `Mems.json` file.
+Oracle listens for various events and messages from users. Upon receiving a message from a new user, Oracle attempts to access their chat history in the Mems/ directory. If no chat history is found, Oracle ignores the user. Finally, The message is then appended to the `Mems.json` file.
 
-Once the chat history is persisted, the chat message is sent to the OpenAI API for generating a response. Upon receiving a response, Oracle sends the generated response back to the user and it persists it inside the `Mems.json` file by appending it.
+Once the chat history is persisted, the chat message is sent to the OpenAI API for generating a response. Upon receiving a response, Oracle sends the generated response back to the user and persists it inside the `Mems.json` file by appending it.
 
 ## Examples
 Suppose Oracle gets a message from user A: "Hello, Oracle"
 
-It would check for any chat history for user A in the `Mems` directory. If there isn't any, it ignores the user.
+She would check for any chat history for user A in the `Mems` directory. If there isn't any, she ignores the user.
 
 Oracle persists the chat history data to the `Mems.json` file. The `Mems.json` file now contains the following data
 
