@@ -98,7 +98,7 @@ func main() {
             offset = update.UpdateID + 1
         }
 
-        time.Sleep(1 * time.Second)
+        time.Sleep(2 * time.Second)
     }
 }
 
