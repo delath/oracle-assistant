@@ -143,6 +143,10 @@ func processUpdate(update Update) {
         if update.Message.Chat.Lastname != nil {
             fmt.Println("Last Name: ", *update.Message.Chat.Lastname)
         }
+        nestedErr := sendMessage(update.Message.Chat.Id, "Whoa, whoa, whoa! Unauthorized access detected! You're not supposed to be here, you know. If you're so set on messing around with this space, why don't you just implement it yourself? Here, this might help: https://github.com/Delath/Oracle-Assistant. Don't say I didn't warn you!")
+        if nestedErr != nil {
+            fmt.Println("Error sending message:", err)
+        }
         return
     }
 
