@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"net/url"
 	"os"
 	"strconv"
 	"time"
@@ -246,7 +247,8 @@ func updateMems(input string, role string, tId int) ([]OAIMessage, error) {
 }
 
 func sendMessage(chatID int, text string) error {
-    url := fmt.Sprintf("%s%s/sendMessage?chat_id=%d&text=%s", telegramAPIURL, telegramBotToken, chatID, text)
+    encodedText := url.QueryEscape(text)
+    url := fmt.Sprintf("%s%s/sendMessage?chat_id=%d&text=%s", telegramAPIURL, telegramBotToken, chatID, encodedText)
     resp, err := http.Get(url)
     if err != nil {
         return err
