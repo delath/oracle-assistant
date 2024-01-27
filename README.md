@@ -2,15 +2,11 @@
 [![License: MIT][license-image]][license]
 ![latest commit](https://img.shields.io/github/last-commit/Delath/Oracle-Assistant?color=red)
 
-<img src="https://i.imgur.com/MOALWmX.png" width=192px height=192px align="right" />
-
-Oracle is a Telegram Bot built in Golang that utilizes OpenAI APIs. She has persistent memory, allowing her to remember previous conversations and enhance user experience.
+Oracle is a Telegram Bot built in Golang that utilizes OpenAI APIs. It has persistent memory, allowing it to remember previous conversations.
 
 ## Features
-- Intuitive chat interface with Telegram.
-- Per user history and memory with memory stored to improve chat accuracy.
+- User-based history and memory.
 - Extensive response generation using OpenAI APIs.
-- Easy to setup and use.
 
 ## Installation
 Clone this repository.
@@ -22,9 +18,12 @@ Navigate to the Oracle directory.
 $ cd oracle-assistant
 ```
 
-**Rename the `placeholder` folder with your telegram id.**
+Rename the `placeholder` folder with your telegram id and then compile the bot.
+```sh
+$ go build main.go
+```
 
-Run the Main commands with your Telegram Bot Token and OpenAI API Key.
+Run the bot with your Telegram Bot Token and OpenAI API Key.
 ```sh
 $ ./main {openai-key} {telegram-bot-token}
 ```
@@ -54,7 +53,7 @@ Oracle persists the chat history data to the `Mems.json` file. The `Mems.json` f
 ]
 ```
 
-This now enables Oracle to provide more personalized responses to User A in the future.
+This enables Oracle to provide more personalized responses regardless of the current outcome of the API call to OpenAI.
 
 ## Functionalities
 | Functionality | Status |
