@@ -2,7 +2,7 @@
 [![License: MIT][license-image]][license]
 ![latest commit](https://img.shields.io/github/last-commit/Delath/Oracle-Assistant?color=red)
 
-Oracle is a Telegram Bot built in Golang that utilizes OpenAI APIs. It has persistent memory, allowing it to remember previous conversations.
+Oracle is a Telegram Bot developed in Go that leverages OpenAI APIs. It has persistent memory, allowing it to remember previous conversations.
 
 ## Features
 - User-based history and memory.
@@ -29,14 +29,14 @@ $ ./main {openai-key} {telegram-bot-token}
 ```
 
 ## Usage
-Oracle listens for various events and messages from users. Upon receiving a message from a new user, Oracle attempts to access their chat history in the Mems/ directory. If no chat history is found, Oracle ignores the user. Finally, The message is then appended to the `Mems.json` file.
+Oracle listens for various events and messages from users. Upon receiving a message from a new user, it attempts to access their chat history in the Mems/ directory. If no chat history is found, Oracle ignores the user. Finally, The message is then appended to the `Mems.json` file.
 
 Once the chat history is persisted, the chat message is sent to the OpenAI API for generating a response. Upon receiving a response, Oracle sends the generated response back to the user and persists it inside the `Mems.json` file by appending it.
 
 ## Examples
 Suppose Oracle gets a message from user A: "Hello, Oracle"
 
-She would check for any chat history for user A in the `Mems` directory. If there isn't any, she ignores the user.
+It would check for any chat history for user A in the `Mems` directory. If there isn't any, the user is ignored.
 
 Oracle persists the chat history data to the `Mems.json` file. The `Mems.json` file now contains the following data
 
