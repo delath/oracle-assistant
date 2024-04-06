@@ -6,7 +6,7 @@ Oracle is a Telegram Bot developed in Go that leverages OpenAI APIs. It has pers
 
 ## Features
 - User-based history and memory.
-- Extensive response generation using OpenAI APIs.
+- Response generation using OpenAI APIs.
 
 ## Installation
 Clone this repository.
@@ -29,7 +29,7 @@ $ ./main {openai-key} {telegram-bot-token}
 ```
 
 ## Usage
-Oracle listens for various events and messages from users. Upon receiving a message from a new user, it attempts to access their chat history in the Mems/ directory. If no chat history is found, Oracle ignores the user. Finally, The message is then appended to the `Mems.json` file.
+Oracle listens for various events and messages from users. Upon receiving a message from a new user, it attempts to access their chat history in the Mems/ directory. If no chat history is found, the user is ignored. Finally, The message is then appended to the `Mems.json` file.
 
 Once the chat history is persisted, the chat message is sent to the OpenAI API for generating a response. Upon receiving a response, Oracle sends the generated response back to the user and persists it inside the `Mems.json` file by appending it.
 
